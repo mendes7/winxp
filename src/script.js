@@ -100,9 +100,9 @@ $(".area-de-trabalho").click(function () {
 });
 
 //CLICOU NO SEGREDO
-$("#segredo").dblclick(function () {
-  window.open("https://www.youtube.com/watch?v=UVph8lkwl1E&list=LL&index=102");
-});
+// $("#segredo").dblclick(function () {
+//   window.open("https://www.youtube.com/watch?v=UVph8lkwl1E&list=LL&index=102");
+// });
 
 //PREVINIR QUE ABRA O MENU PADRÃO DO NAVEGADOR (BOTÃO DIREITO)
 $(document).contextmenu(function () {
