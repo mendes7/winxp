@@ -43,33 +43,6 @@ $("#notepad").dblclick(function () {
   $(".prog-notepad").css("display", "flex");
 });
 
-//DUPLO CLIQUE NO ICONE DO INTERNET EXPLORER
-$("#ie").dblclick(function () {
-  const audio = new Audio("https://www.myinstants.com/media/sounds/erro.mp3");
-  audio.play();
-  $(".error").show();
-});
-
-//CLICOU NO BOTAO "OK" DO DIALOG DE ERRO
-$(".ok").click(function () {
-  $(".error").hide();
-});
-
-//JANELA DE ERRO SER MÓVEL
-$(".error").draggable();
-
-//CLICOU NO BOTÃO DE FECHAR DO DIALOG DE ERRO
-$("#erroFecha").click(function () {
-  $(".error").hide();
-});
-
-//CLICOU NO INTERNET EXPLORER DO MENU INICIAR
-$("#ie-iniciar").click(function () {
-  const audio = new Audio("https://www.myinstants.com/media/sounds/erro.mp3");
-  audio.play();
-  $(".error").show();
-});
-
 //TORNAR JANELA DA LIXEIRA ARRASTÁVEL NA ÁREA DE TRABALHO
 $(".janela").draggable({
   containment: ".area-de-trabalho"
@@ -101,7 +74,7 @@ $(".area-de-trabalho").click(function () {
 
 //CLICOU NO SEGREDO
 // $("#segredo").dblclick(function () {
-//   window.open("https://www.youtube.com/watch?v=UVph8lkwl1E&list=LL&index=102");
+//   window.open("");
 // });
 
 //PREVINIR QUE ABRA O MENU PADRÃO DO NAVEGADOR (BOTÃO DIREITO)
@@ -325,4 +298,14 @@ $(".prog-notepad").click(function () {
       );
     }
   }
+});
+
+// JAVASCRIPT STARTUP
+document.addEventListener("DOMContentLoaded", () => {
+  document.body.classList.add("hidden"); // Oculta o conteúdo ao iniciar
+
+  setTimeout(() => {
+      document.querySelector(".windows__bg").style.display = "none"; // Esconde o startup
+      document.body.classList.remove("hidden"); // Mostra o conteúdo principal
+  }, 4000); // Ajuste o tempo conforme a duração do startup
 });

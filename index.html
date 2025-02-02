@@ -4,210 +4,269 @@
   <meta charset="UTF-8">
   <title>Windows XP</title>
   <link rel='stylesheet' href='https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css'>
-  <link rel="stylesheet" href="./src/style.css">
+  <link rel="stylesheet" href="./src/css/reset.css">
+  <link rel="stylesheet" href="./src/css/style.css">
+  <link rel="stylesheet" href="./src/css/error-warning.css">
+  <link rel="stylesheet" href="./src/css/startup.css">
   
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<div id="windowsXP">
-  <!-- AREA DE TRABALHO (ICONES) -->
-  <div class="area-de-trabalho">
 
-    <!-- ICONE DA LIXEIRA -->
-    <div id="lixeira" class="desktop-icon">
-      <img src="https://www.clipartmax.com/png/full/92-925325_modernxp-76-trash-full-icon-windows-xp-recycle-bin-icon-png.png">
-      <span>Lixeira</span>
-    </div>
-    <!-- ./ FECHA LIXEIRA -->
-    <!-- ICONE DO BLOCO DE NOTAS -->
-    <div id="notepad" class="desktop-icon">
-      <img src="https://www.iconshock.com/image/Vista/General/notepad/">
-      <span>Notepad</span>
-    </div>
-    <!-- ./ FECHA LIXEIRA -->
-    <!-- ICONE DO INTERNET EXPLORER -->
-    <div id="ie" class="desktop-icon">
-      <img src="https://files.tecnoblog.net/wp-content/uploads/2009/03/internet-explorer-8.png">
-      <span>Internet Explorer</span>
-    </div>
-    <!-- ./ FECHA IE -->
+  <!-- START-UP -->
+  <audio id="startupSound" src="./src/assets/startup.m4a"></audio>
 
-  </div>
-  <!-- FECHA AREA DE TRABALHO -->
-
-  <!-- JANELA AVULSA -->
-  <div class="janela" data-status="restaurado">
-    <!-- BARRA DO TOPO -->
-    <div class="topBar">
-      <div class="title-bar">
-        <img width="20" src="https://www.clipartmax.com/png/full/92-925325_modernxp-76-trash-full-icon-windows-xp-recycle-bin-icon-png.png">
-        <h2> Lixeira </h2>
+  <div id="startup" class="windows__bg">
+    <div class="windows__bg--inner">
+      <div class="windows__logo">
+        <div class="windows__logo--inner red"></div>
+        <div class="windows__logo--inner green"></div>
+        <div class="windows__logo--inner blue"></div>
+        <div class="windows__logo--inner yellow"></div>
       </div>
-
-      <!-- AREA DOS BOTOES MINIMIZAR / MAX / FECHAR-->
-      <div class="area-buttons">
-        <button aria-label="Minimize"></button>
-        <button aria-label="Maximize"></button>
-        <button aria-label="Close"></button>
+      <div class="windows__name">
+        <p>Microsoft</p>
+        <div class="windows__name--inner">
+          Windows<span>xp</span>
+        </div>
       </div>
-
-    </div>
-    <!-- ./FECHA TOPO DA JANELA -->
-
-    <div class="janela_body">
-      <!-- ITEM DENTRO DA LIXEIRA -->
-      <div id="segredo" class="icon-lixo">
-        <img src="https://icons.iconarchive.com/icons/hopstarter/software/256/Windows-Media-Player-icon.png">
-        <span>audio.mp4</span>
+      <div class="windows__bg--loading">
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
       </div>
+      <div class="copy">Copyright &copy; Microsoft Corporation</div>
+      <div class="title">Microsoft</div>
     </div>
   </div>
 
-  <!-- JANELA NOTEPAD -->
-  <div class="janela-notepad" data-status="restaurado">
-    <!-- BARRA DO TOPO -->
-    <div class="topBar">
-      <div class="title-bar">
-        <img width="20" src="https://www.iconshock.com/image/Vista/General/notepad/">
-        <h2> Notepad </h2>
-      </div>
-
-      <!-- AREA DOS BOTOES MINIMIZAR / MAX / FECHAR-->
-      <div class="area-buttons">
-        <button aria-label="Minimize-Notepad"></button>
-        <button aria-label="Maximize-Notepad"></button>
-        <button aria-label="Close-Notepad"></button>
-      </div>
-
-    </div>
-    <!-- ./FECHA TOPO DA JANELA -->
-
-    <div class="janela-notepad_body">
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias aspernatur cumque quod exercitationem dolore eos. Officiis deleniti inventore aliquam temporibus esse, magnam sed asperiores aut quibusdam facilis quos culpa perferendis?</p>
-    </div>
-  </div>
-
-  <!-- BARRA DE TAREFAS -->
-  <div class="barra-de-tarefas">
-    <!-- BOTÃO INICIAR -->
-    <button id="iniciar" class="">
-      <img width="30" src="https://icons.iconarchive.com/icons/tatice/operating-systems/128/Windows-icon.png">
-      &nbsp;
-      Iniciar
-    </button>
-    <div class="programas-abertos">
-      <!-- LIXEIRA NA BARRA -->
-      <div class="prog">
-        <img src="https://cdn.pixabay.com/photo/2015/03/21/06/27/recycle-bin-683244_1280.png">
-        <span>Lixeira</span>
-      </div>
-      <!-- NOTEPAD NA BARRA -->
-      <div class="prog-notepad">
-        <img src="https://www.iconshock.com/image/Vista/General/notepad/">
-        <span>Notepad</span>
-      </div>
-      <!-- ./FECHA PROGRAMA NA BARRA -->
-    </div>
-    <div class="area-de-notificacao">
-      <div class="icon" id="volume"></div>
-      <div class="icon" id="media"></div>
-      <div class="icon" id="seguranca"></div>
-      <div id="relogio">--:--</div>
-    </div>
-  </div>
-
-  <!-- MENU INICIAR -->
-  <div id="menuIniciar">
-    <!-- TOPO AREA DO USUARIO -->
-    <div class="topoIniciar">
-      <div class="avatarIniciar">
-      </div>
-      <h2 class="userName"> UFBA</h2>
-    </div>
-
-    <!-- MIOLO -->
-    <div class="mioloIniciar">
-      <div class="col" style=" border-right: 3px solid #bcd2e0; "><br>
-        <!-- ITEM DENTRO DO MENU -->
-        <div id="ie-iniciar" class="itemIniciar">
-          <img width="50" src="https://files.tecnoblog.net/wp-content/uploads/2009/03/internet-explorer-8.png">
-          <span><strong>Internet</strong> <br>Internet Explorer</span>
-        </div>
-        <!-- ./FECHA ITEM DENTRO DO MENU -->
-        <!-- ITEM DENTRO DO MENU -->
-        <div class="itemIniciar">
-          <img width="50" src="https://icons.iconarchive.com/icons/hopstarter/software/256/Windows-Media-Player-icon.png">
-          <span>Windows Media Player</span>
-        </div>
-        <!-- ./FECHA ITEM DENTRO DO MENU -->
-        <!-- TODOS OS PROGRAMAS -->
-        <div class="todosProgramas">
-          <strong>Todos os Programas</strong>
-        </div>
-        <!-- ./FECHA TODOS OS PROGRAMAS -->
-      </div>
-      <div class="col" style="background: #D3E5FD">
-        <!-- ITEM DENTRO DO MENU -->
-        <div class="itemIniciar">
-          <img width="50" src="https://static.wikia.nocookie.net/logopedia/images/7/78/My_Documents_2001.png">
-          <span class="bold-blue">Meus documentos</span>
-        </div>
-        <!-- ./FECHA ITEM DENTRO DO MENU -->
-        <!-- ITEM DENTRO DO MENU -->
-        <div class="itemIniciar">
-          <img width="50" src="https://static.wikia.nocookie.net/logopedia/images/8/86/My_Pictures_WinXP.png">
-          <span class="bold-blue">Minhas imagens</span>
-        </div>
-        <!-- ./FECHA ITEM DENTRO DO MENU -->
-        <!-- ITEM DENTRO DO MENU -->
-        <div class="itemIniciar">
-          <img width="50" src="./src/assets/meu-computador.png">
-          <span class="bold-blue">Meu computador</span>
-        </div>
-        <!-- ./FECHA ITEM DENTRO DO MENU -->
-      </div>
-    </div>
-
-    <!-- FOOTER DO INICIAR BOTOES -->
-    <div class="footerIniciar">
-      <div class="btnFooter">
-        <img width="35" src="https://icons.iconarchive.com/icons/dtafalonso/modern-xp/256/ModernXP-03-System-Lock-icon.png">
-        <a href="#"> Fazer Logoff</a>
-      </div>
-      <div class="btnFooter">
-        <img width="35" src="https://icons.iconarchive.com/icons/alecive/flatwoken/128/Apps-Dialog-Shutdown-icon.png">
-        <a href="#"> Desligar</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- MENSAGEM DE ERRO -->
-  <div class="error">
+  <!-- AVISO PARA CELULAR -->
+  <div class="warning">
     <!-- BARRA DO TOPO -->
     <div class="topBar">
       <div class="title-bar">
 
-        <h2> Critical Error </h2>
+        <h2> Aviso! </h2>
       </div>
 
       <!-- AREA DOS BOTOES MINIMIZAR / MAX / FECHAR-->
       <div class="area-buttons">
-        <button id="erroFecha" aria-label="Close"></button>
+        <button id="avisoFecha" aria-label="Close"></button>
       </div>
 
     </div>
     <!-- ./FECHA TOPO DA JANELA -->
     <div class="message">
       <img src="https://us-tuna-sounds-images.voicemod.net/cfcb439a-1b88-4790-9898-e0fbc354aa7f-1666643160117.png" />
-      Ainda não implementado!
+      O projeto foi pensado e executado para a visualização em desktops e notebooks. Por favor, acesse de um computador para uma melhor experiência.
     </div>
     <button class="ok"> <span>OK</span></button>
   </div>
 
-</div>
-<!-- partial -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js'></script>
-<script src='https://code.jquery.com/ui/1.13.2/jquery-ui.js'></script><script  src="./src/script.js"></script>
+  <!-- partial:index.partial.html -->
+  <div id="windowsXP">
+    <!-- AREA DE TRABALHO (ICONES) -->
+    <div class="area-de-trabalho">
+
+      <!-- ICONE DA LIXEIRA -->
+      <div id="lixeira" class="desktop-icon">
+        <img src="./src/assets/lixeira.png">
+        <span>Lixeira</span>
+      </div>
+      <!-- ./ FECHA LIXEIRA -->
+      <!-- ICONE DO BLOCO DE NOTAS -->
+      <div id="notepad" class="desktop-icon">
+        <img src="https://www.iconshock.com/image/Vista/General/notepad/">
+        <span>Notepad</span>
+      </div>
+      <!-- ./ FECHA LIXEIRA -->
+      <!-- ICONE DO INTERNET EXPLORER -->
+      <div id="ie" class="desktop-icon">
+        <img src="https://files.tecnoblog.net/wp-content/uploads/2009/03/internet-explorer-8.png">
+        <span>Internet Explorer</span>
+      </div>
+      <!-- ./ FECHA IE -->
+
+    </div>
+    <!-- FECHA AREA DE TRABALHO -->
+
+    <!-- JANELA AVULSA -->
+    <div class="janela" data-status="restaurado">
+      <!-- BARRA DO TOPO -->
+      <div class="topBar">
+        <div class="title-bar">
+          <img width="20" src="https://www.clipartmax.com/png/full/92-925325_modernxp-76-trash-full-icon-windows-xp-recycle-bin-icon-png.png">
+          <h2> Lixeira </h2>
+        </div>
+
+        <!-- AREA DOS BOTOES MINIMIZAR / MAX / FECHAR-->
+        <div class="area-buttons">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close"></button>
+        </div>
+
+      </div>
+      <!-- ./FECHA TOPO DA JANELA -->
+
+      <div class="janela_body">
+        <!-- ITEM DENTRO DA LIXEIRA -->
+        <div id="segredo" class="icon-lixo">
+          <img src="https://icons.iconarchive.com/icons/hopstarter/software/256/Windows-Media-Player-icon.png">
+          <span>audio.mp4</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- JANELA NOTEPAD -->
+    <div class="janela-notepad" data-status="restaurado">
+      <!-- BARRA DO TOPO -->
+      <div class="topBar">
+        <div class="title-bar">
+          <img width="20" src="https://www.iconshock.com/image/Vista/General/notepad/">
+          <h2> Notepad </h2>
+        </div>
+
+        <!-- AREA DOS BOTOES MINIMIZAR / MAX / FECHAR-->
+        <div class="area-buttons">
+          <button aria-label="Minimize-Notepad"></button>
+          <button aria-label="Maximize-Notepad"></button>
+          <button aria-label="Close-Notepad"></button>
+        </div>
+
+      </div>
+      <!-- ./FECHA TOPO DA JANELA -->
+
+      <div class="janela-notepad_body">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias aspernatur cumque quod exercitationem dolore eos. Officiis deleniti inventore aliquam temporibus esse, magnam sed asperiores aut quibusdam facilis quos culpa perferendis?</p>
+      </div>
+    </div>
+
+    <!-- BARRA DE TAREFAS -->
+    <div class="barra-de-tarefas">
+      <!-- BOTÃO INICIAR -->
+      <button id="iniciar" class="">
+        <img width="30" src="https://icons.iconarchive.com/icons/tatice/operating-systems/128/Windows-icon.png">
+        &nbsp;
+        Iniciar
+      </button>
+      <div class="programas-abertos">
+        <!-- LIXEIRA NA BARRA -->
+        <div class="prog">
+          <img src="https://cdn.pixabay.com/photo/2015/03/21/06/27/recycle-bin-683244_1280.png">
+          <span>Lixeira</span>
+        </div>
+        <!-- NOTEPAD NA BARRA -->
+        <div class="prog-notepad">
+          <img src="https://www.iconshock.com/image/Vista/General/notepad/">
+          <span>Notepad</span>
+        </div>
+        <!-- ./FECHA PROGRAMA NA BARRA -->
+      </div>
+      <div class="area-de-notificacao">
+        <div class="icon" id="volume"></div>
+        <div class="icon" id="media"></div>
+        <div class="icon" id="seguranca"></div>
+        <div id="relogio">--:--</div>
+      </div>
+    </div>
+
+    <!-- MENU INICIAR -->
+    <div id="menuIniciar">
+      <!-- TOPO AREA DO USUARIO -->
+      <div class="topoIniciar">
+        <div class="avatarIniciar">
+        </div>
+        <h2 class="userName"> UFBA</h2>
+      </div>
+
+      <!-- MIOLO -->
+      <div class="mioloIniciar">
+        <div class="col" style=" border-right: 3px solid #bcd2e0; "><br>
+          <!-- ITEM DENTRO DO MENU -->
+          <div id="ie-iniciar" class="itemIniciar">
+            <img width="50" src="https://files.tecnoblog.net/wp-content/uploads/2009/03/internet-explorer-8.png">
+            <span><strong>Internet</strong> <br>Internet Explorer</span>
+          </div>
+          <!-- ./FECHA ITEM DENTRO DO MENU -->
+          <!-- ITEM DENTRO DO MENU -->
+          <div class="itemIniciar">
+            <img width="50" src="https://icons.iconarchive.com/icons/hopstarter/software/256/Windows-Media-Player-icon.png">
+            <span>Windows Media Player</span>
+          </div>
+          <!-- ./FECHA ITEM DENTRO DO MENU -->
+          <!-- TODOS OS PROGRAMAS -->
+          <div class="todosProgramas">
+            <strong>Todos os Programas</strong>
+          </div>
+          <!-- ./FECHA TODOS OS PROGRAMAS -->
+        </div>
+        <div class="col" style="background: #D3E5FD">
+          <!-- ITEM DENTRO DO MENU -->
+          <div class="itemIniciar">
+            <img width="50" src="https://static.wikia.nocookie.net/logopedia/images/7/78/My_Documents_2001.png">
+            <span class="bold-blue">Meus documentos</span>
+          </div>
+          <!-- ./FECHA ITEM DENTRO DO MENU -->
+          <!-- ITEM DENTRO DO MENU -->
+          <div class="itemIniciar">
+            <img width="50" src="https://static.wikia.nocookie.net/logopedia/images/8/86/My_Pictures_WinXP.png">
+            <span class="bold-blue">Minhas imagens</span>
+          </div>
+          <!-- ./FECHA ITEM DENTRO DO MENU -->
+          <!-- ITEM DENTRO DO MENU -->
+          <div class="itemIniciar">
+            <img width="50" src="./src/assets/meu-computador.png">
+            <span class="bold-blue">Meu computador</span>
+          </div>
+          <!-- ./FECHA ITEM DENTRO DO MENU -->
+        </div>
+      </div>
+
+      <!-- FOOTER DO INICIAR BOTOES -->
+      <div class="footerIniciar">
+        <div class="btnFooter">
+          <img width="35" src="https://icons.iconarchive.com/icons/dtafalonso/modern-xp/256/ModernXP-03-System-Lock-icon.png">
+          <a href="#"> Fazer Logoff</a>
+        </div>
+        <div class="btnFooter">
+          <img width="35" src="https://icons.iconarchive.com/icons/alecive/flatwoken/128/Apps-Dialog-Shutdown-icon.png">
+          <a href="#"> Desligar</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MENSAGEM DE ERRO -->
+    <div class="error">
+      <!-- BARRA DO TOPO -->
+      <div class="topBar">
+        <div class="title-bar">
+
+          <h2> Critical Error </h2>
+        </div>
+
+        <!-- AREA DOS BOTOES MINIMIZAR / MAX / FECHAR-->
+        <div class="area-buttons">
+          <button id="erroFecha" aria-label="Close"></button>
+        </div>
+
+      </div>
+      <!-- ./FECHA TOPO DA JANELA -->
+      <div class="message">
+        <img src="https://us-tuna-sounds-images.voicemod.net/cfcb439a-1b88-4790-9898-e0fbc354aa7f-1666643160117.png" />
+        Ainda não implementado!
+      </div>
+      <button class="ok"> <span>OK</span></button>
+    </div>
+
+  </div>
+
+  <!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js'></script>
+  <script src='https://code.jquery.com/ui/1.13.2/jquery-ui.js'></script>
+  <script src="./src/js/script.js"></script>
+  <script src="./src/js/error-warning.js"></script>
 
 </body>
 </html>
