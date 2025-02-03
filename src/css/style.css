@@ -69,7 +69,7 @@ body {
   justify-content: space-between;
   position: absolute;
   width: 100vw;
-  height: 50px;
+  height: 40px;
   bottom: 0;
   left: 0;
   background: linear-gradient(
@@ -86,24 +86,19 @@ body {
 
 #iniciar {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
-  width: 180px;
+  width: 170px;
   border: none;
-  background: linear-gradient(
-    to bottom,
-    #3d973d 0%,
-    #6faf72 9%,
-    #3d973d 18%,
-    #3d973d 92%,
-    #666 100%
-  );
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
+  background: radial-gradient(circle, #5eac56 0%, #3c873c 100%) center/cover no-repeat;
+  box-shadow: 0px 5px 10px #79ce71 inset, 4px 0 8px #3f8cf3;
+  border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
   cursor: pointer;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: bold;
+  font-style: italic;
   text-shadow: 2px 2px 8px #003d00;
   margin-right:15px;
 }
@@ -133,97 +128,9 @@ body {
 
 .programas-abertos{
   display: flex;
-/*   background: white; */
+  /*background: white; */
   width: 100%;  
 }
-
-.prog{
-  display: none;
-  justify-content:center;
-  align-items:center;
-  width: 150px;
-/*   max-width:200px; */
- background: linear-gradient(
-      to bottom,
-      var(--azul) 0%,
-      var(--azul-medio) 15%,
-      var(--azul-claro) 95%,      
-      #333 100%
-    )
-    center/cover no-repeat;
-  border-radius: 10px;
-  border:1px solid var(--azul);
-  margin-left: 1px;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-/*   box-shadow: 2px 2px 12px black; */
-}
-
-.prog-notepad{
-  display: none;
-  justify-content:center;
-  align-items:center;
-  width: 150px;
-/*   max-width:200px; */
- background: linear-gradient(
-      to bottom,
-      var(--azul) 0%,
-      var(--azul-medio) 15%,
-      var(--azul-claro) 95%,      
-      #333 100%
-    )
-    center/cover no-repeat;
-  border-radius: 10px;
-  border:1px solid var(--azul);
-  margin-left: 1px;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-/*   box-shadow: 2px 2px 12px black; */
-}
-
-.prog img{
-  width:25px;
-  margin-right:10px;
-}
-
-.prog-notepad img{
-  width:25px;
-  margin-right:10px;
-}
-
-.prog.active{
- width: 150px;
-   background: linear-gradient(
-      to bottom,
-      var(--azul) 0%,      
-      #0063B7 90%,      
-      #333 100%
-    )
-    center/cover no-repeat;
-/*   background: #0063B7; */
-  border-radius: 10px;
-  border:2px inset var(--azul-claro);
-  box-shadow: inset 0 6px 6px -6px black;
-  
-}
-
-.prog-notepad.active{
-  width: 150px;
-    background: linear-gradient(
-       to bottom,
-       var(--azul) 0%,      
-       #0063B7 90%,      
-       #333 100%
-     )
-     center/cover no-repeat;
- /*   background: #0063B7; */
-   border-radius: 10px;
-   border:2px inset var(--azul-claro);
-   box-shadow: inset 0 6px 6px -6px black;
-   
- }
 
 .area-de-notificacao {
   display: flex;
@@ -439,38 +346,6 @@ body {
   color: #0C214C !important;
 }
 
-.janela{
-  display: none;
-  flex-flow: row wrap;
-  position: absolute;
-  width: 600px;
-  height: 400px;
-  left:27%;
-  top:25%;
-  background: white;  
-  border: 3px solid var(--azul);
-  border-top-left-radius:5px;
-  border-top-right-radius:5px;
-  z-index:990;
-  overflow: hidden;
-}
-
-.janela-notepad{
-  display: none;
-  flex-flow: row wrap;
-  position: absolute;
-  width: 600px;
-  height: 400px;
-  left:27%;
-  top:25%;
-  background: white;  
-  border: 3px solid var(--azul);
-  border-top-left-radius:5px;
-  border-top-right-radius:5px;
-  z-index:990;
-  overflow: hidden;
-}
-
 .topBar{
   display:flex;
   align-items: center;
@@ -538,72 +413,24 @@ button {
     background-image: var(--icon-minimize);
 }
 
-.area-buttons button[aria-label=Minimize-Notepad] {
-  background-image: var(--icon-minimize);
-}
-
 .area-buttons button[aria-label=Minimize]:hover {
     background-image: var(--icon-minimize-hover);
-}
-
-.area-buttons button[aria-label=Minimize-Notepad]:hover {
-  background-image: var(--icon-minimize-hover);
 }
 
 .area-buttons button[aria-label=Maximize] {
     background-image: var(--icon-maximize);
 }
 
-.area-buttons button[aria-label=Maximize-Notepad] {
-  background-image: var(--icon-maximize);
-}
-
 .area-buttons button[aria-label=Maximize]:hover {
     background-image: var(--icon-maximize-hover);
-}
-
-.area-buttons button[aria-label=Maximize-Notepad]:hover {
-  background-image: var(--icon-maximize);
 }
 
 .area-buttons button[aria-label=Close] {
     background-image: var(--icon-close);
 }
 
-.area-buttons button[aria-label=Close-Notepad] {
-  background-image: var(--icon-close);
-}
-
 .area-buttons button[aria-label=Close]:hover {
     background-image: var(--icon-close-hover);
-}
-
-.area-buttons button[aria-label=Close-Notepad]:hover {
-  background-image: var(--icon-close-hover);
-}
-
-.janela_body{
-  display: flex;
-  justify-content: flex-start;
-  align-items: stretch;
-  width:100%;
-  height: 100%;
-  background: white;
-  padding:0;
-  margin:0;
-  overflow: hidden;
-}
-
-.janela-notepad_body{
-  display: flex;
-  justify-content: flex-start;
-  align-items: stretch;
-  width:100%;
-  height: 100%;
-  background: white;
-  padding:0;
-  margin:0;
-  overflow: hidden;
 }
 
 .icon-lixo {

@@ -1,0 +1,165 @@
+.janela_pesquisa {
+    display: none;
+    flex-flow: row wrap;
+    position: absolute;
+    width: 981px;
+    height: 500px;
+    left:27%;
+    top:25%;
+    background: white;  
+    border: 3px solid var(--azul);
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+    z-index:990;
+    overflow: hidden;
+}
+
+/* Estilo do corpo da janela */
+.estrutura_pesquisa {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    width:100%;
+    height: 100%;
+    background: white;
+    overflow-y: auto;
+    padding: 20px;
+    padding-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Borda sutil */
+    overflow-y: ; /* Adiciona scroll se o conteúdo for muito longo */
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: var(--azul) #f0f0f0; /* Cor da barra e do fundo */
+}
+
+/* Para navegadores baseados em WebKit (Chrome, Edge, Safari) */
+.estrutura_pesquisa::-webkit-scrollbar {
+    width: 8px; /* Largura da barra de rolagem */
+}
+
+/* Fundo da barra de rolagem */
+.estrutura_pesquisa::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Cinza claro */
+    border-radius: 10px; /* Arredondamento */
+}
+
+/* Estilização da barra (o "thumb" que se move) */
+.estrutura_pesquisa::-webkit-scrollbar-thumb {
+    background: var(--azul); /* Usa a cor azul definida no seu CSS */
+    border-radius: 10px; /* Arredondamento */
+    transition: background 0.3s; /* Suaviza a troca de cor */
+}
+
+/* Efeito hover na barra */
+.estrutura_pesquisa::-webkit-scrollbar-thumb:hover {
+    background: darkblue; /* Fica mais escuro ao passar o mouse */
+}
+
+/* Estilo para títulos H1 */
+.estrutura_pesquisa h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--azul); /* Mantendo a identidade visual */
+    margin-bottom: 15px;
+    text-align: left;
+    border-bottom: 2px solid var(--azul);
+    padding-bottom: 5px;
+}
+
+.estrutura_pesquisa h2 {
+    font-size: 20px; /* Tamanho um pouco maior que o normal */
+    font-weight: 700; /* Mais bold, mas sem exagero */
+    color: var(--azul); /* Mantendo a identidade visual */
+    margin-bottom: 10px; /* Espaçamento abaixo do título */
+    text-align: left; /* Alinhamento padrão */
+    border-bottom: 1px solid var(--azul); /* Linha sutil para destaque */
+    padding-bottom: 5px; /* Espaço entre o texto e a linha */
+}
+
+/* Estilo para listas UL */
+.estrutura_pesquisa ul {
+    padding-left: 20px; /* Adiciona um pequeno recuo para as bolinhas */
+    margin: 0;
+}
+
+/* Estilo para itens de lista LI */
+.estrutura_pesquisa li {
+    font-size: 16px;
+    color: #333;
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espaço entre ícone e texto */
+}
+
+/* Usando ::before para criar bolinhas customizadas */
+.estrutura_pesquisa ul li {
+    position: relative; /* Para posicionar a bolinha */
+    font-size: 16px;
+    color: #333;
+    padding-left: 25px; /* Espaçamento para a bolinha */
+    padding-bottom: 8px; /* Espaço entre os itens */
+}
+
+/* Criando a bolinha antes do texto */
+.estrutura_pesquisa ul li::before {
+    content: ''; /* Necessário para exibir o elemento */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: var(--azul); /* Cor da bolinha */
+    border-radius: 50%; /* Faz a bolinha ser redonda */
+}
+
+/* Garantir que o texto em strong fique em negrito */
+.estrutura_pesquisa strong {
+    font-weight: bold; /* Força o negrito caso não esteja aplicando */
+}
+
+.estrutura_pesquisa li:last-child {
+    border-bottom: none; /* Remove a borda do último item */
+}
+
+/* Ícones dentro das listas */
+.estrutura_pesquisa li img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Estilo para imagens dentro da pesquisa */
+.estrutura_pesquisa img {
+    max-width: 70%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+/* Estilo do texto */
+.estrutura_pesquisa p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte moderna */
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333; /* Cor de texto escura para contraste */
+    text-align: justify; /* Texto justificado */
+    margin: 0;
+}
+.estrutura_pesquisa a {
+    color: #0078d7 !important; /* Garante a cor azul */
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block; /* Garante que o link tenha espaço */
+    font-size: 16px; /* Ajuste conforme necessário */
+}
+
+.estrutura_pesquisa a:hover {
+    text-decoration: underline;
+}
+
+.estrutura_pesquisa p {
+    margin-bottom: 10px; /* Adiciona um espaçamento abaixo do parágrafo */
+}

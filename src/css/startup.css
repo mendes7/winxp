@@ -133,6 +133,27 @@
     background: linear-gradient(180deg,#09112d,#8197cd 20%,#8197cd 40%,#5d62ab 60%,#4158a6 70%,#4158a6 80%,#204399 90%,#1c2954);
     margin: 0 .1vw 0 0;
 }
+
+.title, .copy {
+    color: white;
+    font-size: 1.7em;
+}
+
+.title {
+    font-family: 'arial-black', serif;
+    position: absolute;
+    bottom: 12.5%;
+    right: 7.5%;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.copy {
+    position: absolute;
+    bottom: 12.5%;
+    left: 7.5%;
+}
+
 @keyframes loading { 
     0% { left: -2.6vw; } 
     100% { left: 20vw;}

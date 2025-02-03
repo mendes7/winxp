@@ -7,6 +7,8 @@
   <link rel='stylesheet' href='https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css'>
   <link rel="stylesheet" href="./src/css/reset.css">
   <link rel="stylesheet" href="./src/css/style.css">
+  <link rel="stylesheet" href="./src/css/janelas.css">
+  <link rel="stylesheet" href="./src/css/pesquisa.css">
   <link rel="stylesheet" href="./src/css/error-warning.css">
   <link rel="stylesheet" href="./src/css/startup.css">
   
@@ -14,8 +16,6 @@
 <body>
 
   <!-- START-UP -->
-  <audio id="startupSound" src="./src/assets/startup.m4a"></audio>
-
   <div id="startup" class="windows__bg">
     <div class="windows__bg--inner">
       <div class="windows__logo">
@@ -37,9 +37,9 @@
           <li></li>
         </ul>
       </div>
-      <div class="copy">Copyright &copy; Microsoft Corporation</div>
-      <div class="title">Microsoft</div>
     </div>
+    <div class="copy">Copyright &copy; Microsoft Corporation</div>
+    <div class="title">Microsoft</div>
   </div>
 
   <!-- AVISO PARA CELULAR -->
@@ -59,8 +59,9 @@
     </div>
     <!-- ./FECHA TOPO DA JANELA -->
     <div class="message">
-      <img src="https://us-tuna-sounds-images.voicemod.net/cfcb439a-1b88-4790-9898-e0fbc354aa7f-1666643160117.png" />
-      O projeto foi pensado e executado para a visualização em desktops e notebooks. Por favor, acesse de um computador para uma melhor experiência.
+      <img src="./src/assets/error-icon.webp" />
+      O projeto foi pensado e executado para a visualização em desktops e notebooks. <br>
+      Por favor, acesse de um computador para uma melhor experiência.
     </div>
     <button class="ok"> <span>OK</span></button>
   </div>
@@ -76,24 +77,33 @@
         <span>Lixeira</span>
       </div>
       <!-- ./ FECHA LIXEIRA -->
+
       <!-- ICONE DO BLOCO DE NOTAS -->
       <div id="notepad" class="desktop-icon">
-        <img src="https://www.iconshock.com/image/Vista/General/notepad/">
-        <span>Notepad</span>
+        <img src="./src/assets/notepad.png">
+        <span>Pesquisa Geral</span>
       </div>
-      <!-- ./ FECHA LIXEIRA -->
+      <!-- ./ FECHA BLOCO DE NOTAS -->
+
       <!-- ICONE DO INTERNET EXPLORER -->
-      <div id="ie" class="desktop-icon">
+      <!-- <div id="ie" class="desktop-icon">
         <img src="https://files.tecnoblog.net/wp-content/uploads/2009/03/internet-explorer-8.png">
         <span>Internet Explorer</span>
-      </div>
+      </div> -->
       <!-- ./ FECHA IE -->
+
+      <!-- ICONE DO PASTA -->
+      <div id="pasta" class="desktop-icon">
+        <img src="./src/assets/folder.png">
+        <span>Estéticas Digitais</span>
+      </div>
+      <!-- ./ FECHA PASTA -->
 
     </div>
     <!-- FECHA AREA DE TRABALHO -->
 
-    <!-- JANELA AVULSA -->
-    <div class="janela" data-status="restaurado">
+    <!-- JANELA LIXEIRA -->
+    <div class="janela" id="janelalixeira" data-status="restaurado" >
       <!-- BARRA DO TOPO -->
       <div class="topBar">
         <div class="title-bar">
@@ -103,9 +113,9 @@
 
         <!-- AREA DOS BOTOES MINIMIZAR / MAX / FECHAR-->
         <div class="area-buttons">
-          <button aria-label="Minimize"></button>
-          <button aria-label="Maximize"></button>
-          <button aria-label="Close"></button>
+          <button aria-label="Minimize" data-janela="janelalixeira"></button>
+          <button aria-label="Maximize" data-janela="janelalixeira"></button>
+          <button aria-label="Close" data-janela="janelalixeira"></button>
         </div>
 
       </div>
@@ -114,33 +124,408 @@
       <div class="janela_body">
         <!-- ITEM DENTRO DA LIXEIRA -->
         <div id="segredo" class="icon-lixo">
-          <img src="https://icons.iconarchive.com/icons/hopstarter/software/256/Windows-Media-Player-icon.png">
-          <span>audio.mp4</span>
+          <img src="./src/assets/windowsmediaplayer-icon.png">
+          <span>frutiger-aero.mp4</span>
         </div>
       </div>
     </div>
 
-    <!-- JANELA NOTEPAD -->
-    <div class="janela-notepad" data-status="restaurado">
+    <!-- JANELA PASTA -->
+    <div class="janela" id="janelapasta" data-status="restaurado" >
       <!-- BARRA DO TOPO -->
       <div class="topBar">
         <div class="title-bar">
-          <img width="20" src="https://www.iconshock.com/image/Vista/General/notepad/">
-          <h2> Notepad </h2>
+          <img width="20" src="./src/assets/folder.png">
+          <h2>Estéticas Digitais</h2>
         </div>
 
         <!-- AREA DOS BOTOES MINIMIZAR / MAX / FECHAR-->
         <div class="area-buttons">
-          <button aria-label="Minimize-Notepad"></button>
-          <button aria-label="Maximize-Notepad"></button>
-          <button aria-label="Close-Notepad"></button>
+          <button aria-label="Minimize" data-janela="janelapasta"></button>
+          <button aria-label="Maximize" data-janela="janelapasta"></button>
+          <button aria-label="Close" data-janela="janelapasta"></button>
         </div>
 
       </div>
       <!-- ./FECHA TOPO DA JANELA -->
 
-      <div class="janela-notepad_body">
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias aspernatur cumque quod exercitationem dolore eos. Officiis deleniti inventore aliquam temporibus esse, magnam sed asperiores aut quibusdam facilis quos culpa perferendis?</p>
+      <div class="janela_body">
+        <!-- ITEM DENTRO DA LIXEIRA -->
+        <div id="notepad-y2k" class="icon-lixo">
+          <img src="./src/assets/notepad.png">
+          <span>Y2K.txt</span>
+        </div>
+
+        <div id="notepad-webcore" class="icon-lixo">
+          <img src="./src/assets/notepad.png">
+          <span>Webcore.txt</span>
+        </div>
+
+        <div id="notepad-frutiger" class="icon-lixo">
+          <img src="./src/assets/notepad.png">
+          <span>Frutiger Aero.txt</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- JANELA NOTEPAD -->
+    <div class="janela_pesquisa" id="janelanotepad" data-status="restaurado">
+      <!-- BARRA DO TOPO -->
+      <div class="topBar">
+        <div class="title-bar">
+          <img width="20" src="./src/assets/notepad.png">
+          <h2> A construção da Identidade Digital </h2>
+        </div>
+
+        <!-- AREA DOS BOTOES MINIMIZAR / MAX / FECHAR-->
+        <div class="area-buttons">
+          <button aria-label="Minimize" data-janela="janelanotepad"></button>
+          <button aria-label="Maximize" data-janela="janelanotepad"></button>
+          <button aria-label="Close" data-janela="janelanotepad"></button>
+        </div>
+
+      </div>
+      <!-- ./FECHA TOPO DA JANELA -->
+
+      <div class="estrutura_pesquisa">
+        <h1>A Construção da Identidade Digital nas Interfaces da Internet</h1>
+        
+        <p>
+          A chegada da internet ao mundo transformou a maneira como nos comunicamos, trabalhamos e nos relacionamos. Novas profissões, interações 
+          e possibilidades foram criadas, e, com isso, a necessidade de constante aprendizado diante dessas mudanças. Em um curto espaço de 
+          tempo, nossa presença online cresceu. A ideia de equilibrar a vida real com a virtual já foi tema de muitos debates, e como André 
+          Lemos reflete, já estamos imersos no ciberespaço, onde não há mais uma distinção clara entre estar "dentro" ou "fora" da internet. 
+          Não estamos apenas online: deixamos pegadas digitais, dados com nossas informações que, apesar de geradas por nós, não nos pertencem.
+        </p>
+
+        <p>
+          “Não se deve confundir a cibercultura com uma subcultura particular, a cultura de uma ou algumas ‘tribos’. Ao contrário, a cibercultura 
+          é a nova forma de cultura. Entramos hoje como penetramos na cultura alfabética há alguns séculos.” — André Lemos, *Cibercultura*.
+        </p>
+
+        <p>
+          Nos anos 90, quando um computador era um recurso restrito às classes altas, sites como Yahoo!, AltaVista e AOL dominavam a web, além 
+          de portais de notícias e fóruns de discussão. A internet era, em grande parte, um espaço estático, com páginas repletas de texto e 
+          poucos recursos visuais. À medida que o objeto se tornava mais acessível, as interfaces se tornavam mais interativas e a troca de 
+          informações se transformava em um novo meio de sociabilidade. Os sites passaram a ser utilizados não apenas por desenvolvedores, mas 
+          também pelo público geral, embora limitado às pessoas com melhores condições financeiras. Em 1996, o valor de um computador básico 
+          custava cerca de US$ 1500 a US$ 2000. Naquela época, portais como Yahoo!, AltaVista e AOL dominavam a internet, enquanto fóruns de 
+          discussão, navegadores de busca, sites para downloads de músicas, livros e imagens, além do revolucionário e-mail, eram ferramentas 
+          essenciais. As páginas, em sua maioria, eram estáticas, com muito texto, poucas imagens e recursos visuais limitados. Muitos sites 
+          com muitos acessos funcionavam como agrupamentos de hyperlinks, conectando informações e permitindo o acesso a outras páginas com 
+          um simples clique. 
+        </p>
+
+        <br><img src="./src/assets/img-pesquisas/geral/ibm.png" alt=""><br>
+        <p style="text-align: center;"><strong>IBM.COM, 1998</strong></p><br>
+
+        <p>
+          Nos anos 2000, a internet tomou rumos cada vez mais próximos do que conhecemos hoje. A Amazon e o eBay já eram reconhecidos pelo 
+          comércio online, enquanto a Wikipedia e o LinkedIn viam o crescimento de seus números de usuários. O Google se consolidava como o 
+          principal mecanismo de busca, e diversas redes sociais, como Facebook, YouTube, Twitter, MySpace e Fotolog, além dos crescentes 
+          jogos online, ganhavam popularidade. A conexão de internet também se tornava mais rápida, e o universo digital se aproximava de uma 
+          comunidade, seja por meio das lan houses ou de fóruns virtuais. A troca de informações entre as pessoas passou a mudar as dinâmicas 
+          e as relações com a internet. A Web 2.0 consolidou-se como um agrupamento de conteúdos colaborativos, trocas de mídias sociais e 
+          interações em tempo real. Em 2008, o Facebook já havia atingido 100 milhões de usuários. Os blogs se tornaram mais comuns e pessoais. 
+          Apesar da falta de habilidades técnicas para a criação de sites propriamente ditos, a personalização feita pelos usuários era bem 
+          perceptível. Isso não se restringia apenas a sites ou blogs pessoais, mas também às várias contas e nomes de usuários que passavam 
+          a cadastrar seus nomes, gostos, fotografias, etc. Novos usos de cores, símbolos, gírias, abreviações e modos de expressão surgiram, 
+          refletindo as personalidades dos usuários e coletivos.
+        </p>
+        
+        <br><img src="./src/assets/img-pesquisas/geral/fotolog.png" alt=""><br>
+        <p style="text-align: center;"><strong>Fotolog, 2004</strong></p><br>
+
+        <p>
+          Nos primeiros anos da internet mais acessível, vivemos um período de inovação, em que empresas e usuários testavam maneiras criativas 
+          de interagir. No entanto, a internet ainda era uma verdadeira "terra de ninguém". Assim como outros espaços passíveis de exploração 
+          no sistema capitalista, essa fonte de conhecimento sempre se limitou a diversos contextos sociais, seja pela classe social ou até 
+          mesmo por limitações geográficas. Esses "territórios" foram criados, e a internet foi povoada de maneira cada vez mais produtiva, 
+          mas ainda se viam novos hábitos e formas de uso surgindo constantemente. O aprendizado sobre informática ocorria de forma 
+          descentralizada, com diferentes contextos sociais moldando as formas de interação.
+        </p>
+
+        <p>
+          No início da popularização da internet, as interfaces apresentavam características muito diversas entre si. Sistemas como o Windows 
+          exploravam uma complexidade visual, mas funcional, com simbologias semelhantes às do mundo real. Essa visualidade contrastava com 
+          experiências mais personalizadas, como blogs e plataformas como Tumblr, Fotolog e Blogger, que ofereciam um espaço para experimentação 
+          e compartilhamento, muitas vezes sem pretensões comerciais. Nesses ambientes, o principal objetivo era explorar, criar e compartilhar 
+          por prazer, sem o foco na organização ou funcionalidade. Com a padronização de processos e interfaces, o ambiente digital se tornou 
+          mais acessível e compreensível para um público mais amplo. A semelhança entre funcionalidades, como as encontradas em sites de compras 
+          e redes sociais, não apenas facilitou o primeiro contato dos usuários, mas também promoveu a consolidação do uso contínuo. Essa 
+          evolução reflete tanto mudanças tecnológicas quanto transformações culturais e sociais impulsionadas pelo avanço da internet.
+        </p>
+
+        <br><img src="./src/assets/img-pesquisas/geral/delete-edit-save.png" alt=""><br>
+        <p style="text-align: center;"><strong>Lixeira, lápis e disquete.</strong></p><br>
+
+        <p>
+          Ao longo dos anos, a análise das navegações, testes e áreas de estudo, as preferências e os cliques dos usuários possibilitaram a 
+          criação de padrões de usabilidade a partir de mapas mentais de milhares de pessoas. Jakob Nielsen define usabilidade como "um 
+          atributo de qualidade que avalia quão fácil uma interface é de usar" ou "a medida da qualidade da experiência de um usuário ao 
+          interagir com um produto ou sistema". Esses padrões ajudaram a formar mapas mentais que orientam os indivíduos em suas interações 
+          com interfaces digitais.
+        </p>
+
+        <p>
+          Seja através de livros, ao explorar novos conhecimentos, ou ao viajar por diferentes partes do mundo, a internet sempre se apresentou 
+          como uma janela para a exploração pessoal. Em um mundo onde a comunicação física muitas vezes é limitada, a internet oferece a 
+          oportunidade de conectar e expressar a essência do "eu" em um espaço global, permitindo que cada indivíduo seja autor de sua própria 
+          narrativa. Através de logins, cadastros, postagens e atualizações em perfis, as pessoas começaram a criar identidades digitais, 
+          compartilhando não apenas informações, mas também emoções, experiências e pontos de vista. Esse processo de interação nos diferentes 
+          espaços virtuais era, e ainda é, uma maneira de se reinventar constantemente, ajustando-se ao fluxo de tendências e ao modo como o 
+          mundo digital evolui. Quando tudo isso era novo, a sensação de imersão e a chance de se mostrar sem as barreiras físicas criavam uma 
+          dinâmica de descobertas, expressão e construção de comunidades, que hoje fazem parte do nosso cotidiano digital.
+        </p>
+
+        <p>
+          Em conclusão, a internet, apesar de sua aparência mais uniforme e padronizada nos dias atuais, já foi um espaço de grande diversidade 
+          estética, onde estilos como Webcore, Vaporwave, Cyberpunk e Grunge floresceram. Esses movimentos refletiam a criatividade dos 
+          usuários, que, sem as limitações dos designs padronizados de hoje, criavam páginas digitais carregadas de personalidade. Embora as 
+          interfaces modernas sejam mais minimalistas e focadas na usabilidade, as influências dessas estéticas ainda são visíveis, 
+          lembrando-nos de um período em que a web era um campo fértil para a experimentação visual e a expressão individual.
+        </p>
+
+        <!-- <br><h2>Fontes das pesquisas de Estéticas Digitais:</h2>
+        <br><span>Y2K:</span>
+        <ul>
+          <li><a href="https://andrelug.com" target="_blank">andrelug.com</a>, "Estética Y2K para projetos de web design: Tudo o que você precisa saber".</li>
+        </ul>
+
+        <br><span>Webcore:</span>
+        <ul>
+          <li><a href="https://aesthetics.fandom.com/wiki/Webcore" target="_blank">https://aesthetics.fandom.com/wiki/Webcore</a></li>
+        </ul>
+
+        <br><span>Frutiger Aero:</span>
+        <ul>
+          <li><a href="https://frutiger-aero.org/frutiger-aero" target="_blank">https://frutiger-aero.org/frutiger-aero</a></li>
+          <li><a href="https://www.are.na/consumer-aesthetics-research-institute/frutiger-aero-ptg8tgmzbig" target="_blank">https://www.are.na/consumer-aesthetics-research-institute/frutiger-aero-ptg8tgmzbig</a></li>
+          <li><a href="https://cari.institute/aesthetics/frutiger-aero" target="_blank">https://cari.institute/aesthetics/frutiger-aero</a></li>
+        </ul> -->
+      </div>
+    </div>
+
+    <!-- JANELA NOTEPAD-Y2K -->
+    <div class="janela_pesquisa" id="janelanotepad-y2k" data-status="restaurado">
+      <!-- BARRA DO TOPO -->
+      <div class="topBar">
+        <div class="title-bar">
+          <img width="20" src="./src/assets/notepad.png">
+          <h2> Y2K </h2>
+        </div>
+
+        <!-- AREA DOS BOTOES MINIMIZAR / MAX / FECHAR-->
+        <div class="area-buttons">
+          <button aria-label="Minimize" data-janela="janelanotepad-y2k"></button>
+          <button aria-label="Maximize" data-janela="janelanotepad-y2k"></button>
+          <button aria-label="Close" data-janela="janelanotepad-y2k"></button>
+        </div>
+
+      </div>
+      <!-- ./FECHA TOPO DA JANELA -->
+
+      <div class="estrutura_pesquisa">
+        <h1>Y2K (1990 - 2000)</h1>
+
+        <p>
+          A estética Y2K, caracteriza-se por elementos futuristas, translúcidos, iridescentes e brilhantes, refletindo o otimismo tecnológico
+          e a cultura pop do final dos anos 1990 e início dos anos 2000. No web design dessa época, essa estética manifestou-se através de 
+          interfaces translúcidas, uso de cores metálicas e vibrantes, tipografias futuristas e elementos gráficos que remetiam à inovação 
+          tecnológica. Sites como o "2Advanced Studios v1" de 2000 exemplificam essa abordagem, apresentando designs arrojados e interativos
+          que capturavam o espírito da era digital emergente. 
+        </p>
+
+        <br><br>
+        <img src="./src/assets/img-pesquisas/y2k/2advanced-studios-v1.jpg" alt="">
+        <br><br>
+
+        <p>
+          Para explorar mais sobre a estética Y2K no web design dos anos 2000, o Web Design Museum oferece uma exposição dedicada ao tema, 
+          apresentando exemplos de sites emblemáticos da época. <br>[<a href="https://webdesignmuseum.org" target="_blank">webdesignmuseum.org</a>]
+        </p>
+
+        <p>
+          Atualmente, há um ressurgimento do interesse pela estética Y2K, com designers contemporâneos incorporando elementos dessa era em 
+          projetos modernos, mesclando nostalgia com inovação. Esse movimento destaca a natureza cíclica das tendências de design e a contínua 
+          influência do passado nas criações atuais.
+        </p>
+
+        <p>
+          A estética Y2K, que emergiu no final dos anos 1990 e início dos anos 2000, é o resultado da combinação do início da era da internet
+          (e suas tecnologias) e as expectativas em relação ao futuro pós virada milênio (inclusive seu nome é referência ao evento Y2K, mais
+          conhecido no Brasil como o Bug do Milênio, que foi boato iniciado no final dos anos 90 sobre um suposto bug que afetaria os
+          computadores da época na virada de 1999 para 2000).
+          <br><br>
+          No web design dessa época, essa estética se manifestou por meio de elementos visuais específicos que buscavam transmitir uma sensação futurista e inovadora.
+        </p>
+
+        <h2>Características do Web Design Y2K:</h2>
+
+        <ul>
+          <li>
+            <strong>Paleta de Cores Vibrantes:</strong> Uso de cores neon e metálicas, como verde-limão, rosa-choque e azul brilhante, 
+            frequentemente com efeitos cromados e holográficos.
+          </li>
+          <li>
+            <strong>Tipografia Marcante:</strong> Fontes estilizadas, muitas vezes curvas ou futuristas, que capturavam o espírito tecnológico da época.
+          </li>
+          <li>
+            <strong>Elementos Gráficos 3D:</strong> Incorporação de gráficos tridimensionais de baixa fidelidade, com aparência brilhante e quase caricatural.
+          </li>
+          <li>
+            <strong>Texturas e Efeitos Especiais:</strong> Aplicação de texturas metálicas, efeitos de brilho e falhas digitais para enfatizar a modernidade e o avanço tecnológico.
+          </li>
+          <li>
+            <strong>Animações e GIFs:</strong> Uso abundante de GIFs animados e elementos em movimento para tornar as páginas mais dinâmicas e interativas.
+          </li>
+        </ul>
+
+        <br>
+        <p>
+          Na era Y2K, tudo era brilhante. O design era futurista, os efeitos cromados para fontes estavam de repente facilmente disponíveis 
+          nos computadores de todos, e os gráficos 3D estavam se tornando avançados o suficiente para fazer objetos brilhantes que pareciam 
+          totalmente radicais. Esse visual poderia envolver um cromo brilhante com reflexos claros, um brilho metálico fosco ou um efeito 
+          holográfico perolado com muitos azuis, brancos e rosas suaves.
+        </p>
+
+        <p>
+          Esteticamente, tem acenos para a era espacial, incorporando formas de blobby e texturas brilhantes. Também faz referência ao estilo
+          hip-hop com sua adoção de bling, flash e formas exageradas e cultura rave com suas cores doces brilhantes e imagens psicodélicas.
+        </p>
+
+        <p>
+          Muito disso se deve à tecnologia da época. No final dos anos 90 e início dos anos 2000, o desenvolvimento web ainda estava surgindo,
+          e a maioria dos usuários tinha conexão de baixa largura de banda, levando a imagens pixeladas ou de baixa fidelidade, e tipos 
+          rudimentares de animação (como formas giratórias).
+        </p>
+
+        <p>
+          No entanto, a tecnologia estava se desenvolvendo rapidamente, e os designers também estavam testando coisas novas e ultrapassando 
+          os limites do que poderiam fazer graficamente, como curvas e curvaturas. <strong>“As curvas reinavam supremas na estética Y2K, pois
+          não eram tão fáceis de fazer antes, então tinham o apelo adicional de serem algo novo”</strong>, disse Evan Collins, criador do
+          Consumer Aesthetics Research Institute.
+        </p>
+      </div>
+    </div>
+
+    <!-- JANELA NOTEPAD-WEBCORE -->
+    <div class="janela_pesquisa" id="janelanotepad-webcore" data-status="restaurado">
+      <!-- BARRA DO TOPO -->
+      <div class="topBar">
+        <div class="title-bar">
+          <img width="20" src="./src/assets/notepad.png">
+          <h2> Webcore </h2>
+        </div>
+
+        <!-- AREA DOS BOTOES MINIMIZAR / MAX / FECHAR-->
+        <div class="area-buttons">
+          <button aria-label="Minimize" data-janela="janelanotepad-webcore"></button>
+          <button aria-label="Maximize" data-janela="janelanotepad-webcore"></button>
+          <button aria-label="Close" data-janela="janelanotepad-webcore"></button>
+        </div>
+
+      </div>
+      <!-- ./FECHA TOPO DA JANELA -->
+
+      <div class="estrutura_pesquisa">
+        <h1>WEBCORE (1990 - 2000)</h1>
+
+        <p>
+          A Webcore resgata elementos do design da internet dos anos 1990 e início dos anos 2000, através do uso de características como 
+          gráficos pixelados, GIFs animados, clipes de áudio ao fundo, imagens de baixa resolução, símbolos, etc. Essa estética busca reviver 
+          a sensação de auto expressão e liberdade criativa dos primeiros anos da internet, antes da padronização e da ascensão das redes sociais dominantes. 
+        </p>
+
+        <p>
+          A estética, muitas vezes, trás um sentimento de "internet sem filtros" — um lugar onde a individualidade dos usuários era mais 
+          destacada e o design era mais “rudimentar” mas cheio de personalidade dos seus usuários. Ela pode ser vista como uma reação contra 
+          a padronização e a “sofisticação” da internet atual, que privilegia o minimalista e interfaces limpas.
+        </p>
+
+        <br>
+        <h2>Elementos ao redor do Webcore:</h2>
+
+        <ul>
+          <li>Jogos Flash</li>
+          <li>Dark Web</li>
+          <li>The Sims</li>
+          <li>Pirataria</li>
+          <li>Fóruns</li>
+          <li>Bate-papo online</li>
+        </ul>
+
+        <br>
+
+        <img src="./src/assets/img-pesquisas/webcore/mylittleponey.png" alt="">
+        <br><br>
+        <img src="./src/assets/img-pesquisas/webcore/cyberwormhole.png" alt="">
+      </div>
+    </div>
+
+    <!-- JANELA NOTEPAD-FRUTIGER -->
+    <div class="janela_pesquisa" id="janelanotepad-frutiger" data-status="restaurado">
+      <!-- BARRA DO TOPO -->
+      <div class="topBar">
+        <div class="title-bar">
+          <img width="20" src="./src/assets/notepad.png">
+          <h2> Frutiger Aero</h2>
+        </div>
+
+        <!-- AREA DOS BOTOES MINIMIZAR / MAX / FECHAR-->
+        <div class="area-buttons">
+          <button aria-label="Minimize" data-janela="janelanotepad-frutiger"></button>
+          <button aria-label="Maximize" data-janela="janelanotepad-frutiger"></button>
+          <button aria-label="Close" data-janela="janelanotepad-frutiger"></button>
+        </div>
+
+      </div>
+      <!-- ./FECHA TOPO DA JANELA -->
+
+      <div class="estrutura_pesquisa">
+        <h1>Frutiger Aero (2000 - 2010)</h1>
+
+        <p>
+          Frutiger Aero é a expressão que descreve uma tendência do design que estava presente em estéticas de interfaces e da Internet entre
+          a década de 2005 até 2013. O termo “Frutiger” é uma homenagem ao designer Adrian Frutiger, criador de diversas tipografias humanistas
+          que eram comumente utilizadas em interfaces de computadores antigos. Já “Aero” remete ao Windows Aero, uma interface do sistema 
+          operacional do Windows que ficou em vigor durante o desenvolvimento do Windows Vista e Windows 7. 
+        </p>
+
+        <br>
+        <p>Segundo Sofi Lee, essa estética é caracterizada pelos seguintes elementos:</p>
+        <br>
+        
+        <ul>
+          <li>Esqueumorfismo, termo utilizado para descrever técnicas do design que incorporam ideias antigas em novas tecnologias.</li>
+          <li>“Glossy” design, aspecto de superfície brilhante, lustrosa.</li>
+          <li>Tipografias humanistas de Frutiger.</li>
+          <li>Paletas de cores terciárias.</li>
+          <li>Elementos transparentes.</li>
+          <li>Fotografias de auroras boreais.</li>
+          <li>Fotos com efeito Bokeh, efeito de luz em formas circulares.</li>
+          <li>Fotos macro de grama.</li>
+        </ul>
+
+        <br><br>
+
+        <img src="./src/assets/img-pesquisas/frutiger/grassland-wallpaper.jpg" alt="">
+
+        <p style="text-align: center;"><strong>Grassland Wallpaper - Windows 7</strong></p>
+
+        <h2>T-Mobile MyTouch 3G (2009)</h2>
+
+        <p>
+          A partir de 2007, a estética Frutiger foi adotada universalmente trazendo elementos como humanismo e consciência climática em harmonia
+          com aspectos tecnológicos. Essas características são passíveis de crítica, tendo em vista que foram aplicadas por grandes empresas
+          com o intuito de fomentar um discurso eco-friendly, apesar de continuarem promovendo o consumismo e continuarem adotando ações que
+          prejudicam o meio-ambiente.
+        </p>
+
+        <p>
+          A partir de 2010, o uso do Frutiger Aero passa a decair. O esqueumorfismo passa a ficar em desuso enquanto o “Flat design” tem sua
+          ascensão. Com o lançamento do Windows 8 e o IOS 7, o Frutiger Aero passa a ser esquecido em detrimento do crescimento do design minimalista.
+        </p>
       </div>
     </div>
 
@@ -148,23 +533,50 @@
     <div class="barra-de-tarefas">
       <!-- BOTÃO INICIAR -->
       <button id="iniciar" class="">
-        <img width="30" src="https://icons.iconarchive.com/icons/tatice/operating-systems/128/Windows-icon.png">
+        <img width="30" src="./src/assets/windows-icon.png">
         &nbsp;
         Iniciar
       </button>
+
       <div class="programas-abertos">
         <!-- LIXEIRA NA BARRA -->
-        <div class="prog">
+        <div class="prog" id="proglixeira" >
           <img src="./src/assets/lixeira.png">
           <span>Lixeira</span>
         </div>
+
         <!-- NOTEPAD NA BARRA -->
-        <div class="prog-notepad">
-          <img src="https://www.iconshock.com/image/Vista/General/notepad/">
+        <div class="prog" id="prognotepad">
+          <img src="./src/assets/notepad.png">
           <span>Notepad</span>
         </div>
-        <!-- ./FECHA PROGRAMA NA BARRA -->
+
+        <!-- PASTA NA BARRA -->
+        <div class="prog" id="progpasta">
+          <img src="./src/assets/folder.png">
+          <span>Pasta</span>
+        </div>
+
+        <!-- Y2K NA BARRA -->
+        <div class="prog" id="prognotepad-y2k">
+          <img src="./src/assets/notepad.png">
+          <span>Y2K</span>
+        </div>
+
+        <!-- WEBCORE NA BARRA -->
+        <div class="prog" id="prognotepad-webcore">
+          <img src="./src/assets/notepad.png">
+          <span>Webcore</span>
+        </div>
+
+        <!-- FRUTIGER NA BARRA -->
+        <div class="prog" id="prognotepad-frutiger">
+          <img src="./src/assets/notepad.png">
+          <span>Frutiger Aero</span>
+        </div>
+        <!-- ./FECHA PROGRAMAs NA BARRA -->
       </div>
+
       <div class="area-de-notificacao">
         <div class="icon" id="volume"></div>
         <div class="icon" id="media"></div>
@@ -179,7 +591,7 @@
       <div class="topoIniciar">
         <div class="avatarIniciar">
         </div>
-        <h2 class="userName"> UFBA</h2>
+        <h2 class="userName">UFBA</h2>
       </div>
 
       <!-- MIOLO -->
@@ -187,13 +599,13 @@
         <div class="col" style=" border-right: 3px solid #bcd2e0; "><br>
           <!-- ITEM DENTRO DO MENU -->
           <div id="ie-iniciar" class="itemIniciar">
-            <img width="50" src="https://files.tecnoblog.net/wp-content/uploads/2009/03/internet-explorer-8.png">
+            <img width="50" src="./src/assets/internet-explorer.png">
             <span><strong>Internet</strong> <br>Internet Explorer</span>
           </div>
           <!-- ./FECHA ITEM DENTRO DO MENU -->
           <!-- ITEM DENTRO DO MENU -->
           <div class="itemIniciar">
-            <img width="50" src="https://icons.iconarchive.com/icons/hopstarter/software/256/Windows-Media-Player-icon.png">
+            <img width="50" src="./src/assets/windowsmediaplayer-icon.png">
             <span>Windows Media Player</span>
           </div>
           <!-- ./FECHA ITEM DENTRO DO MENU -->
@@ -206,13 +618,13 @@
         <div class="col" style="background: #D3E5FD">
           <!-- ITEM DENTRO DO MENU -->
           <div class="itemIniciar">
-            <img width="50" src="https://static.wikia.nocookie.net/logopedia/images/7/78/My_Documents_2001.png">
+            <img width="50" src="./src/assets/documentos.webp">
             <span class="bold-blue">Meus documentos</span>
           </div>
           <!-- ./FECHA ITEM DENTRO DO MENU -->
           <!-- ITEM DENTRO DO MENU -->
           <div class="itemIniciar">
-            <img width="50" src="https://static.wikia.nocookie.net/logopedia/images/8/86/My_Pictures_WinXP.png">
+            <img width="50" src="./src/assets/imagens.webp">
             <span class="bold-blue">Minhas imagens</span>
           </div>
           <!-- ./FECHA ITEM DENTRO DO MENU -->
@@ -228,11 +640,11 @@
       <!-- FOOTER DO INICIAR BOTOES -->
       <div class="footerIniciar">
         <div class="btnFooter">
-          <img width="35" src="https://icons.iconarchive.com/icons/dtafalonso/modern-xp/256/ModernXP-03-System-Lock-icon.png">
+          <img width="35" src="./src/assets/logoff.png">
           <a href="#"> Fazer Logoff</a>
         </div>
         <div class="btnFooter">
-          <img width="35" src="https://icons.iconarchive.com/icons/alecive/flatwoken/128/Apps-Dialog-Shutdown-icon.png">
+          <img width="35" src="./src/assets/shutdown.png">
           <a href="#"> Desligar</a>
         </div>
       </div>
@@ -256,7 +668,7 @@
       <!-- ./FECHA TOPO DA JANELA -->
       <div class="message">
         <img src="https://us-tuna-sounds-images.voicemod.net/cfcb439a-1b88-4790-9898-e0fbc354aa7f-1666643160117.png" />
-        Ainda não implementado!
+        O Intenet Explorer parou de funcionar.
       </div>
       <button class="ok"> <span>OK</span></button>
     </div>
@@ -267,6 +679,7 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js'></script>
   <script src='https://code.jquery.com/ui/1.13.2/jquery-ui.js'></script>
   <script src="./src/js/script.js"></script>
+  <script src="./src/js/janelas.js"></script>
   <script src="./src/js/error-warning.js"></script>
 
 </body>

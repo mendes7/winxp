@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+@import './vars.css';
+
+.janela{
+    display: none;
+    flex-flow: row wrap;
+    position: absolute;
+    width: 600px;
+    height: 400px;
+    left:27%;
+    top:25%;
+    background: white;  
+    border: 3px solid var(--azul);
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+    z-index:990;
+    overflow: hidden;
+}
+
+.janela_body{
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    width:100%;
+    height: 100%;
+    background: white;
+    padding:0;
+    margin:0;
+    overflow: hidden;
+}
+
+.prog{
+    display: none;
+    justify-content:center;
+    align-items:center;
+    width: 150px;
+    /*   max-width:200px; */
+    background: linear-gradient(
+        to bottom,
+        var(--azul) 0%,
+        var(--azul-medio) 15%,
+        var(--azul-claro) 95%,      
+        #333 100%
+    ) center/cover no-repeat;
+    border-radius: 10px;
+    border:1px solid var(--azul);
+    margin-left: 1px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    /*   box-shadow: 2px 2px 12px black; */
+}
+  
+.prog img{
+    width:25px;
+    margin-right:10px;
+}
+  
+.prog.active{
+    width: 150px;
+    background: linear-gradient(
+        to bottom,
+        var(--azul) 0%,      
+        #0063B7 90%,      
+        #333 100% 
+    )
+    center/cover no-repeat;
+  /*   background: #0063B7; */
+    border-radius: 10px;
+    border:2px inset var(--azul-claro);
+    box-shadow: inset 0 6px 6px -6px black;    
+}
